@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Todo } from 'src/models/todo.models';
 
 @Component({
   selector: 'app-root',
@@ -6,12 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public todos: any[] = [];
+  public todos: Todo[] = [];
   public title: String = 'Minhas Tarefas';
 
   constructor() {
-    this.todos.push('Item 1');
-    this.todos.push('Item 2');
-    this.todos.push('Item 3');
+    this.todos.push(new Todo(1, 'Ler o livro PBB - Fabio e Paulo.', false));
+    this.todos.push(new Todo(2, 'Ler o livro A arte de ligar o foda-se - Mark.', false));
+    this.todos.push(new Todo(3, 'Cortar o cabelo.', true));
+    this.todos.push(new Todo(4, 'Estudar Angular - Balta.', false));
   }
 }
